@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/graphique.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
+    <script src="scripts/animation_ecriture.js" defer></script>
+    <script src="scripts/boutons.js" defer></script>
+
+    <!-- Police -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="haute_de_page">
+            <div class="photo">
+                <img src="images/photo-homePage.jpg">
+            </div>
+    
+            <div class="soft_skills">
+                <h1 id="titre_soft_skills"></h1>
+                <br><br>
+                <ul>
+                    <li class="curieux">Curieux</li>
+                    <br><br>
+                    <li class="studieux">Studieux</li>
+                    <br><br>
+                    <li class="interesse">Intéressé</li>
+                    <br><br>
+                    <li class="motive">Motivé</li>
+                </ul>
+            </div>
+    
+            <div class="hard_skills">
+                <canvas id="graph_skills"></canvas> <!-- Utilisation de la balise "canvas" pour le graph -->
+            </div>
+        </div>
+    
+        <br>
+    
+        <div class="navigation">
+            <div class="contacts">
+                <h2>Me contacter</h2>
+                <ul>
+                    <li title="Mon adresse éléctronique"><img src="images/mail1.png" alt="Bouton" id="btn_mail" class="boutons_contacts" style="cursor: pointer;">theo.sala-naessens@imerir.com</li>
+                    <li title="Copier mon numéro de téléphone"><img src="images/phone1.png" alt="Bouton" id="btn_phone" class="boutons_contacts" style="cursor: pointer;"><span class="tel">06 26 77 02 33</span></li>
+                    <li title="Mon profil LinkedIn"><img src="images/linkedin1.png" alt="Bouton" id="btn_linkedin" class="boutons_contacts" style="cursor: pointer;">LinkedIn</li>
+                    <li title="Jetez un oeil à mon CV"><img src="images/download1.png" alt="Bouton" id="btn_cv" class="boutons_contacts" style="cursor: pointer;">Télécharger mon CV</li>
+                </ul>
+            </div>
+
+            <div class="boutons_nav">
+                <button id="btn_APM" class="boutons_navigation">À propos de moi</button>
+                <button id="btn_formations" class="boutons_navigation">Formations et experiences</button>
+                <button id="btn_projets" class="boutons_navigation">Mes projets</button>
+                <button id="btn_passions" class="boutons_navigation">Mes passions</button>
+            </div>
+        </div>
+
+        <h1 class="titre_moi">À propos de moi</h1>
+        <br>
+        <div class="div_moi">
+            <article>
+                J'ai commencé à m'intéresser à l'informatique dès le collège grâce à mon prof de technologie qui nous a fait réaliser quelques projets : fabrication d'une borne d'arcade avec un raspberry, modélisation 3d sur Onshape et SolidWorks, programmation scratch...<br>
+                Puis en 4ème, je décide de prendre des cours sur OpenClassroom, je commence par le C++, le HTML et le CSS. Ensuite, pendant l'année de 3ème, je fais un stage de découverte de 1 semaine à <a href="https://www.imerir.com/" target="_blank">l'IMERIR</a> (L’institut méditerranéen d'étude et recherche en informatique et robotique) où je découvre la programmation Python pour la première fois.<br><br>
+                À mon entrée au lycée, je choisis les spécialités <strong>NSI</strong> (numérique et sciences informatiques), <strong>HGGSP</strong> (histoire-géographie, géopolitique et sciences politiques) et <strong>AMC</strong> (Anglais monde contemporain) avec une option mathématique. C'est au lycée que je développe vraiment mes compétences dans le langage Python. En parallèle, je continue de m'auto-former notamment en renforçant mes compétences en HTML et CSS puis en apprenant les bases du JavaScript.<br>
+                Je créais aussi des petits <a href="projets.html" target="_blank">projets</a> en lien avec les cours ou des projets personnels.
+                Finalement, j'obtiens mon bac avec mention et je décide de me diriger vers une alternance à l'imerir pour mes études supérieurs.<br><br>
+                Mes perspectives d'avenir restent assez floues, je vise plusieurs métiers : développeur, ingénieur dans l'aérospatial ou des métiers dans la cybersécurité.
+            </article>
+
+            <img src="images/photo_college.jpg" title="soudure au collège Madame de Sévigné">
+        </div>
+
+        <h1 class="titre_formations">Formations et experiences</h1>
+        <div class="div_formations">
+            <div>
+                <h3>Collège Madame de Sévigné</h3><br>
+                <p>09/2018 à 06/2021</p><br>
+                <article>
+                    Brevet des Collèges mention Très bien<br>
+                    Bia (Brevet d'Initiation aéronautique) mention Bien
+                </article>
+            </div>
+
+            <div>
+                <h3>Lycée Pablo Picasso</h3><br>
+                <p>09/2021 à 06/2024</p><br>
+                <article>
+                    Bac général spécialité NSI et HGGSP mention Bien
+                </article>
+            </div>
+
+            <div>
+                <h3>DEUST IOSI à l'IMERIR</h3><br>
+                <p>09/2024 à 2026</p><br>
+                <article>
+                    Préparation d'un DEUST IOSI (Informatique d'organisation et systèmes d'information) à <a href="https://www.imerir.com/" target="_blank">l'imerir</a>
+                </article>
+            </div>
+        </div>
+
+        <br>
+
+        <h2 class="stage_titre">Stages</h2>
+        <div class="stages">
+            <div>
+                <h3>Stage d'observation à l'imerir</h3><br>
+                <p>Février 2021</p><br>
+                <article>
+                    missions réalisées : installation d'un système d'exploitation en début de semaine.
+                    programation Python et HTML/CSS.
+                    Montage et programation d'un robot qui devais suivre un parcours et le terminer le plus rapidement possible.
+                </article>
+            </div>
+
+            <div>
+                <h3>Stage d'observation à Gybeset Informatique</h3><br>
+                <p>Novembre 2021</p><br>
+                <article>
+                    missions réalisées : paramétrage et utilisation auto-dirigée du logiciel Unreal Engine 4, réalisation de système d'ouverture de porte grâce à des interactions.
+                    programation auto-dirigée en HTML et CSS. Réalisation d'un site qui contenait mon CV
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p><span>&#169;</span> 2024 Théo Sala-Naëssens</p>
+        </div>
+        <div>
+            <p>si vous avez des conseils pour ameliorer cette page contactez moi à l'adresse mail : sala.theo@outlook.fr</p>
+        </div>
+    </footer>
+</body>
+</html>

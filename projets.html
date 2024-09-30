@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes projets</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/boutons_projets.js" defer></script>
+    <script src="scripts/lightbox.js" defer></script>
+
+    <!-- Police -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <nav class="menu">
+            <div class="navigation_projets">
+                <button id="btnISS" class="boutons_navigation_projets">1</button>
+                <button id="btnVente" class="boutons_navigation_projets">2</button>
+                <button id="btnJeu" class="boutons_navigation_projets">3</button>
+            </div>
+        </nav>
+
+        <div class="mes_projets">
+            <!-- Projet ISS -->
+            <div class="div_iss">
+                <h1>L'ISS</h1>
+                <h4>Contexte :</h4>
+                <p>
+                    Pendant mon année de terminal au lycée Pablo Picasso, un devoir nous a été demandé par la professeure d'HGGSP. Nous devions choisir un thème et rendre un travail sous le format que nous souhaitions. 
+                    J'ai donc décidé de développer un site qui définit l'ISS, présente ses objectifs et ses enjeux.
+                </p>
+                <button id="btn_github_iss" class="boutons_github">Accéder à la page GitHub</button>
+                <div class="img_projets">
+                    <img src="images/ISS1.png" onclick="openLightbox(this)">
+                    <img src="images/ISS2.png" onclick="openLightbox(this)">
+                    <img src="images/ISS3.png" onclick="openLightbox(this)">
+                </div>
+            </div>
+        
+            <!-- Projet de vente automobile -->
+            <div class="div_vente">
+                <h1>Site de vente automobile</h1>
+                <h4>Contexte :</h4>
+                <p>
+                    Avec un ami, nous avons commencé à développer un site de vente automobile de luxe pour s'entraîner au travail en équipe et apprendre de nouvelles compétences en développement web. 
+                    Malheureusement, ce projet n'a jamais été terminé, car mon collaborateur s'est retiré du projet.
+                </p>
+                <button id="btn_github_vente" class="boutons_github">Accéder à la page GitHub</button>
+                <div class="img_projets">
+                    <img src="images/vente1.png" onclick="openLightbox(this)">
+                    <img src="images/vente2.png" onclick="openLightbox(this)">
+                </div>
+            </div>
+        
+            <!-- Projet de jeu vidéo -->
+            <div class="div_jeu">
+                <h1>Mon premier jeu vidéo !</h1>
+                <h4>Contexte :</h4>
+                <p>
+                    J'ai toujours rêvé de créer un jeu vidéo. Un jour, pendant mon année de terminale, j'ai décidé d'apprendre à utiliser la librairie PyGame. 
+                    Grâce aux cours auto-dirigés et à mes connaissances en Programmation Orientée Objet Python, j'ai appris à coder mon premier jeu vidéo. 
+                    Vous pourrez trouver le code Python sur ma page GitHub.
+                </p>
+                <button id="btn_github_jeu" class="boutons_github">Accéder à la page GitHub</button>
+                <div class="img_projets">
+                    <img src="images/image_jeu.png" onclick="openLightbox(this)">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lightbox pour agrandir les images -->
+        <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-content" id="expandedImg">
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p><span>&#169;</span> 2024 Théo Sala-Naëssens</p>
+        </div>
+        <div>
+            <p>Si vous avez des conseils pour améliorer cette page, contactez-moi à l'adresse mail : sala.theo@outlook.fr</p>
+        </div>
+    </footer>
+</body>
+</html>

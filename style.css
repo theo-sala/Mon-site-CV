@@ -1,0 +1,694 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --background-color: rgb(184, 184, 184);
+    --button-color: rgb(0, 105, 148);
+
+    background-color: var(--background-color);
+    font-size: 1.3em;
+    font-family: "Bruno Ace SC", sans-serif;
+    padding: 0;
+}
+
+a {
+    color: black;
+}
+
+/* ----------Premiere moitié de page----------  */
+.haute_de_page {
+    padding-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.haute_de_page > div {
+    height: 26.5em;
+    text-align: center;
+    margin: auto;
+}
+
+.photo {
+    width: 35%;
+}
+
+.photo > img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 0.5em;
+
+    /* Nouveaux styles pour s'adapter au fond gris clair et au thème tech */
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure discrète avec un léger contraste */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(109, 109, 109, 0.7); /* Ombre lumineuse douce avec touche technologique */
+    
+    filter: saturate(120%) contrast(110%); /* Accentuation des couleurs pour plus de contraste */
+    transition: transform 0.1s ease, box-shadow 0.3s ease, filter 0.1s ease; /* Animation fluide au hover */
+}
+
+.photo > img:hover {
+    transform: scale(1.01); /* Léger agrandissement au survol */
+    box-shadow: 0 0 20px rgba(109, 109, 109, 0.7), 0 0 30px rgba(109, 109, 109, 0.7); /* Amplification de la lueur */
+}
+
+.soft_skills {
+    text-align: left; 
+    border-right: 1px gray solid;
+    width: 25%;
+}
+
+#titre_soft_skills {
+    width: 50%;
+    border-right: 2px solid black; /* Simule un curseur de texte */
+    white-space: nowrap;
+    overflow: hidden; /* Cache le texte excédentaire */
+    animation: blink-caret 0.8s step-end infinite; /* Animation du curseur clignotant */
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.soft_skills > ul {
+    list-style-type: none; /* Retire les puces par défaut */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.soft_skills > ul > li {
+    position: relative;
+    padding-left: 4em; /* Espace pour l'image */
+    margin-bottom: 10px;
+}
+
+/* Remplace point des <li> par des logo */
+
+.curieux::before, .studieux::before, .interesse::before, .motive::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centre verticalement l'image */
+    width: 5em; 
+    height: 5em; 
+    background-image: url('images/curiosite.png'); 
+    background-size: contain; /* Redimensionne l'image pour tenir dans le conteneur */
+    background-repeat: no-repeat;
+}
+
+.curieux::before {
+    background-image: url('images/curiosite.png'); /* Chemin de votre image */
+}
+
+.studieux::before {
+    background-image: url('images/studieux.png'); /* Chemin de votre image */
+}
+
+.interesse::before {
+    background-image: url('images/interesse.png'); /* Chemin de votre image */
+}
+
+.motive::before {
+    background-image: url('images/motive.png'); /* Chemin de votre image */
+}
+
+
+.hard_skills {
+    width: 40%;
+    /* Met le graphique en bas de la div */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+
+/* ----------Deuxieme moitié de la page---------- */
+
+.navigation {
+    padding-left: 1%;
+    margin-top: 1%;
+    display: flex;
+}
+
+.contacts {
+    height: 12em;
+    width: 40%;
+    border-right: 2px gray solid;
+}
+
+.contacts ul {
+    list-style-type: none;
+}
+
+.contacts li {
+    display: flex; /* Utilise flex pour centrer l'image et le texte */
+    align-items: center; 
+    margin-bottom: 2px;
+}
+
+.boutons_contacts {
+    width: 5%;  /* Ajuste la largeur souhaitée */
+    height: 5%; /* Ajuste la hauteur souhaitée */
+    margin-right: 10px; /* Espacement entre l'image et le texte */
+    vertical-align: middle; /* Centre l'image verticalement avec le texte */
+}
+
+.contacts li img {
+    width: 7%; /* Prend toute la largeur du bouton */
+    height: auto; /* Conserve les proportions de l'image */
+    object-fit: contain; /* Pour conserver les proportions */
+}
+
+
+/* animation des boutons */
+
+.boutons_contacts {
+    width: 3%;
+    height: 3%;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: opacity 1s ease;
+}
+
+/* Survol des boutons - Change l'image de chaque bouton */
+#btn_mail:hover {
+    content: url('images/mail2.png'); /* Change l'image de mail1.png à mail2.png */
+}
+
+#btn_linkedin:hover {
+    content: url('images/linkedin2.png'); /* Change l'image de linkedin1.png à linkedin2.png */
+    transform: rotate(10deg);
+    transition: transform 300ms ease-in-out;
+}
+
+#btn_phone:hover {
+    content: url('images/phone2.png'); /* Change l'image de phone1.png à phone2.png */
+    transform: rotate(10deg);
+    transition: transform 300ms ease-in-out;
+    animation: rotateAnimation;
+}
+
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+#btn_cv:hover {
+    content: url('images/download2.png'); /* Change l'image de github1.png à github2.png */
+    transform: rotate(10deg);
+    transition: transform 300ms ease-in-out;
+}
+
+/* Boutons de navigations */
+.boutons_nav {
+    margin-left: 5%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permet de passer à la ligne */
+}
+
+.boutons_nav > .boutons_navigation {
+    width: 45%;
+    height: 40%;
+    margin-right: 5%;
+    padding: 0.8em 1.8em;
+    border: 2px var(--button-color) solid;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: "Bruno Ace SC", sans-serif;
+    color: var(--button-color);
+}
+   
+.boutons_navigation::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--button-color);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+   
+.boutons_navigation:hover::before {
+    width: 105%;
+}
+   
+.boutons_navigation:hover {
+    color: #111;
+}
+
+
+/* ----------A propos de moi page---------- */
+
+.titre_moi {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.div_moi {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div_moi > article {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    border: 3px gray solid;
+}
+
+.div_moi > img {
+    cursor: help;
+    width: 25%;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+}
+
+.div_moi > article > a:hover, .div_formations > div > article > a:hover {
+    color: var(--button-color);
+}
+
+
+/* ----------Formations page---------- */
+
+.titre_formations {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.div_formations, .stages {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.div_formations > div, .stages > div {
+    text-align: center;
+    width: 30%;
+    border: 2px gray solid;
+    border-radius: 2em;
+    padding: 1%;
+}
+
+.div_formations, .stages > div > h3 {
+    text-decoration: underline;
+}
+
+.stage_titre {
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+/* ----------Footer---------- */
+footer {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    margin-top: 30%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(63, 63, 63);
+}
+
+footer > div {
+    width: 40%;
+}
+
+footer > div > p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > div > p > span {
+    font-size: 2em;
+    margin-right: 5px;
+}
+
+
+/* ----------Page Projets---------- */
+
+.menu, .menu_passions{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; /* Ajuste la largeur selon tes besoins */
+    height: 35%; /* Prend toute la hauteur de la page */
+    border-radius:0 0 5em 0;
+    background-color: rgba(211, 189, 237, 0.8); /* Fond violet translucide */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère */
+    padding: 0; /* Supprime tout padding */
+    margin: 0; /* Supprime les marges */
+}
+
+/* Boutons de navigation */
+.navigation_projets, .navigation_passions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace entre les boutons */
+    padding: 10px 0; /* Ajoute un peu d'espace vertical autour des boutons */
+    align-items: center; /* Centre les boutons horizontalement */
+}
+
+.boutons_navigation_projets, .boutons_navigation_passions {
+    width: 70px; 
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #7b68ee; /* Bord violet doux */
+    background-color: #e6e6fa; /* Couleur de fond lavande */
+    box-shadow: rgb(0 0 0 / 10%) 0 2px 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boutons_navigation_projets:hover, .boutons_navigation_passions:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.boutons_navigation_projets:active, .boutons_navigation_passions:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+  
+.div_iss, .div_vente, .div_jeu  {
+    padding: 20px;
+    text-align: center;
+}
+
+.div_iss > h4, .div_vente > h4, .div_jeu > h4 {
+    margin-top: 3%;
+}
+
+.div_iss > p, .div_vente > p, .div_jeu > p {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.boutons_github {
+    margin-top: 1%;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: "Bruno Ace SC", sans-serif;
+    cursor: pointer;
+}
+  
+.boutons_github::before {
+    margin-left: auto;
+}
+  
+.boutons_github::after, .boutons_github::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(93 24 220);
+    display: block;
+    transition: 0.5s;
+}
+  
+.boutons_github:hover::after, button:hover::before {
+    width: 100%;
+}
+
+.div_iss, .div_vente, .div_jeu {
+    margin-bottom: 20%;
+}
+
+.img_projets {
+    margin-top: 3%;
+}
+
+.mes_projets > div > div > img {
+    margin: 0 auto;
+    width: 30%;
+}
+
+/* Style des images dans les projets */
+.img_projets img {
+    cursor: pointer; /* Le curseur montre que l'image est cliquable */
+}
+
+/* Lightbox */
+.lightbox {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    z-index: 1000; /* Assure que la lightbox est bien au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond grisâtre */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Désactive les clics tant que la lightbox n'est pas active */
+}
+
+.lightbox.active {
+    display: flex; /* La lightbox devient visible */
+    opacity: 1;
+    pointer-events: all; /* Réactive les clics */
+}
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+
+/* ----------Page Passions---------- */
+
+.div_auto, .div_magic {
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-bottom: 35%;
+    text-align: center;
+}
+
+.div_auto > h1, .div_magic > h1{
+    font-size: 3em;
+    margin-bottom: 3%;
+}
+
+.div_magic > h1 {
+    font-size: 3em
+}
+
+.div_auto > h2{
+    margin-top: 5%;
+}
+
+
+.intro_auto, .intro_mtg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro_auto > img {
+    width: 30%;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+}
+
+.intro_mtg > img {
+    width: 30%;
+}
+
+.intro_auto > article, .intro_mtg > article {
+    text-align: left;
+    margin-left: 2%;
+    width: 50%;
+}
+
+.intro_auto > article > a:hover, .intro_mtg > article > a:hover{
+    color: rgb(93 24 220);
+}
+
+/* Galerie de photos */
+.galerie_voiture, .musee_voiture, .musee_carte, .prix {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.galerie_voiture > img, .musee_voiture > img, .musee_carte > img{
+    margin-top: 5%;
+    width: 30%;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+}
+
+.prix {
+    margin-top: 1%;
+}
+
+/* ---------- Responsivité générale ---------- */
+
+/* Pour les très grands écrans (larger than 1200px) */
+@media (min-width: 1200px) {
+    .haute_de_page > div {
+        width: calc(33.33% - 20px); /* Chaque div occupe un tiers de la largeur de l'écran */
+        margin: 10px; /* Ajoute de l'espacement entre les divs */
+    }
+}
+
+/* Pour les écrans d'ordinateurs (entre 992px et 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .haute_de_page > div {
+        width: calc(33.33% - 10px);
+        margin: 5px;
+    }
+
+    .photo img {
+        width: 100%; /* L'image prend toute la largeur de son conteneur */
+    }
+
+    footer {
+        font-size: 1.1rem;
+    }
+}
+
+/* Pour les tablettes (entre 768px et 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .haute_de_page > div {
+        width: calc(50% - 20px); /* Chaque div occupe la moitié de la largeur de l'écran */
+        margin: 10px;
+    }
+
+    .photo img {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+}
+
+/* Pour les smartphones (entre 576px et 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .haute_de_page > div {
+        width: 100%; /* Les divs prennent toute la largeur */
+        margin-bottom: 20px; /* Espace entre les sections */
+    }
+
+    .photo img {
+        max-width: 90%; /* Image centrée et légèrement réduite */
+        margin: 0 auto;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 20px 5px;
+    }
+}
+
+/* Pour les petits smartphones (moins de 576px) */
+@media (max-width: 575px) {
+    body {
+        font-size: 1rem;
+        padding: 0 5%;
+    }
+
+    .haute_de_page {
+        flex-direction: column;
+        align-items: center; /* Centrer les divs en colonne */
+    }
+
+    .haute_de_page > div {
+        width: 100%; /* Les divs prennent toute la largeur */
+        margin-bottom: 20px; /* Espace entre les divs */
+    }
+
+    .photo img {
+        width: 100%; /* Image pleine largeur */
+        margin-bottom: 20px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* ---------- Améliorations visuelles ---------- */
+@media (max-width: 768px) {
+    .contacts ul {
+        padding-left: 0; /* Retire le padding de la liste sur mobile */
+    }
+
+    .contacts li {
+        flex-direction: column; /* Passe les éléments des contacts en colonne sur mobile */
+        align-items: center;
+    }
+
+    .boutons_contacts {
+        margin-bottom: 10px; /* Espace sous le bouton sur mobile */
+    }
+
+    .boutons_nav {
+        flex-direction: column; /* Navigation en colonne sur mobile */
+    }
+}
